@@ -39,7 +39,7 @@ public class Rational implements Comparable<Rational>{
         numerator = num;
         denominator = den;
         if (den < 0)
-            numerator *= -1;
+            numerator = -numerator;
         simplify();
     }
 
@@ -88,12 +88,20 @@ public class Rational implements Comparable<Rational>{
     public void mul(Rational number){
         numerator *= number.getNumerator();
         denominator *= number.getDenominator();
+        if (numerator < 0 && denominator < 0){
+            numerator = -numerator;
+            denominator = -denominator;
+        }
         simplify();
     }
 
     public void div(Rational number){
         denominator *= number.getNumerator();
         numerator *= number.getDenominator();
+        if (numerator < 0 && denominator < 0){
+            numerator = -numerator;
+            denominator = -denominator;
+        }
         simplify();
     }
 
