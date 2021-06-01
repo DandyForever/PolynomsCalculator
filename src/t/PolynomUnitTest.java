@@ -124,4 +124,22 @@ public class PolynomUnitTest {
         String poly = "190-11x^2+123x^50-56x^70";
         Assert.assertEquals(poly, new Polynom(poly).toString());
     }
+
+    @Test
+    public void RationalCoef(){
+        String poly = "3/10-25/2x^3+123/71x^50-56/57x^98";
+        Assert.assertEquals(poly, new Polynom(poly).toString());
+    }
+
+    @Test
+    public void RationalPower(){
+        String poly = "3/10-25/2x^3/10+123/71x^50/31-56/57x^98/17";
+        Assert.assertEquals(poly, new Polynom(poly).toString());
+    }
+
+    @Test
+    public void RationalNegativePower(){
+        String poly = "3/10-25/2x^-3/10+123/71x^50/31-56/57x^98/17";
+        Assert.assertEquals(poly, new Polynom(poly).toString());
+    }
 }
